@@ -45,8 +45,8 @@ const updateExpense = asyncHandler(async(req,res)=>{
 })
 
 const deleteExpense = asyncHandler(async(req,res)=>{
+    const {id} = req.params
     try{
-        const {id} = req.params
         const expenseDelete = await Expense.findByIdAndDelete(id)
         res.json(expenseDelete)
     }catch(error)
