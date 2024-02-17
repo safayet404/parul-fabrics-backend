@@ -57,7 +57,7 @@ const getSingleSellById = asyncHandler(async (req, res) => {
   try {
     const {id} = req.params
    
-    const sellSingleDetails = await Sell.findById(id)
+    const sellSingleDetails = await Sell.findById(id).populate('description')
     
    
     res.json(sellSingleDetails);
