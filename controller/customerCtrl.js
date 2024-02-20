@@ -16,7 +16,8 @@ const createCustomer = asyncHandler(async (req, res) => {
 
 const getAllCustomer = asyncHandler(async (req, res) => {
   try {
-    const customers = await Customer.find();
+  
+    const customers = await Customer.find().sort({ createdAt: -1 });
     res.json(customers);
   } catch (error) {
     throw new Error(error);
