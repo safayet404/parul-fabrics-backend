@@ -16,6 +16,7 @@ const colorRouter = require("./routes/colorRoute")
 const customerRouter = require("./routes/customerRoutes")
 const balanceRouter = require("./routes/balanceRoutes")
 const sellRouter = require("./routes/sellRoutes")
+const dashboardUser = require("./routes/dashboardUserRoutes")
 const bodyParser = require('body-parser');
 const { notFound, errorHandler } = require('./middlewares/errorHandler');
 const cookieParser = require("cookie-parser")
@@ -39,6 +40,7 @@ app.use('/api/expense',expenseRouter)
 app.use('/api/sell',sellRouter)
 app.use('/api/color',colorRouter)
 app.use('/api/receive',receiveRouter)
+app.use('/api/dashboardUser',dashboardUser)
 
 app.use(cookieParser())
 app.use(notFound)

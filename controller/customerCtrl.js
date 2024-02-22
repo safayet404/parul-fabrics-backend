@@ -1,7 +1,6 @@
 const Customer = require("../models/customerModel");
 const asyncHandler = require("express-async-handler");
 const validateMongodbId = require("../utils/validateMongodbid");
-const Sell = require("../models/sellModel");
 const createCustomer = asyncHandler(async (req, res) => {
   try {
     const newCustomer = await Customer.create(req.body);
@@ -17,7 +16,7 @@ const createCustomer = asyncHandler(async (req, res) => {
 const getAllCustomer = asyncHandler(async (req, res) => {
   try {
   
-    const customers = await Customer.find().sort({ createdAt: -1 });
+    const customers = await Customer.find()
     res.json(customers);
   } catch (error) {
     throw new Error(error);
