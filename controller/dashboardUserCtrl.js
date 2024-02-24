@@ -35,6 +35,17 @@ const singleUser = asyncHandler(async(req,res)=>{
         throw new Error(error)
     }
 })
+const singleUserByMail = asyncHandler(async(req,res)=>{
+    try{
+        const {email} = req.params
+
+        const user = await DashboardUser.findOne({email : email})
+        res.json(user)
+    }catch(error)
+    {
+        throw new Error(error)
+    }
+})
 
 const userUpdate = asyncHandler(async(req,res)=>{
     try{
@@ -64,5 +75,6 @@ module.exports = {
     allUsers,
     singleUser,
     userUpdate,
-    userDelete
+    userDelete,
+    singleUserByMail
 }
