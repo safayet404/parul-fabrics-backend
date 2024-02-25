@@ -10,6 +10,10 @@ var dailyExpenseSchema = new mongoose.Schema({
         type:String,
         required:true,
     },
+    description:{
+        type:String,
+        default : "Not Applicable"
+    },
     amount:{
         type:Number,
         required:true,
