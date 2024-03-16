@@ -24,7 +24,7 @@ const getAllExpense = asyncHandler(async(req,res)=>{
 const getSingleExpense = asyncHandler(async(req,res)=>{
     try{
         const {id} = req.params
-        const singleExpense = await Expense.findById(id)
+        const singleExpense = await Expense.findById(id).sort({_id : - 1});
         res.json(singleExpense)
 
     }catch(error)
