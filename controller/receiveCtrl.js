@@ -19,7 +19,7 @@ const createReceiveData = asyncHandler(async(req,res)=>{
 
 const getAllReceiveData = asyncHandler(async(req,res)=>{
     try{
-        const getReceiveData = await Receive.find()
+        const getReceiveData = await Receive.find().sort({_id : - 1});
         res.json(getReceiveData)
 
     }catch(error)
@@ -32,7 +32,7 @@ const getSingleReceiveData = asyncHandler(async(req,res)=>{
     try{
 
         const {id} = req.params
-        const singleData = await Receive.find({customerId : id})
+        const singleData = await Receive.find({customerId : id}).sort({_id : - 1});
         res.json(singleData)
     }catch(error)
     {
@@ -43,7 +43,7 @@ const getSingleRcvById = asyncHandler(async(req,res)=>{
     try{
 
         const {id} = req.params
-        const singleData = await Receive.findById(id)
+        const singleData = await Receive.findById(id).sort({_id : - 1});
         res.json(singleData)
     }catch(error)
     {
