@@ -33,7 +33,7 @@ const addSell = asyncHandler(async (req, res) => {
 
 const getSellDetails = asyncHandler(async (req, res) => {
   try {
-    const sellDetails = await Sell.find().populate(['customerId','description']).sort({_id - 1});
+    const sellDetails = await Sell.find().populate(['customerId','description']).sort({_id : - 1});
 
     res.json(sellDetails);
   } catch (error) {
