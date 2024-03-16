@@ -13,7 +13,7 @@ const createExpense = asyncHandler(async(req,res)=>{
 
 const getAllExpense = asyncHandler(async(req,res)=>{
     try{
-        const getExpense = await Expense.find()
+        const getExpense = await Expense.find().sort({_id : - 1});
         res.json(getExpense)
     }catch(error)
     {
