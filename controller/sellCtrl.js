@@ -45,7 +45,7 @@ const getSellSingleDetails = asyncHandler(async (req, res) => {
   try {
     const {id} = req.params
    
-    const sellSingleDetails = await Sell.find({customerId : id}).populate('description')
+    const sellSingleDetails = await Sell.find({customerId : id}).populate('description').sort({_id : - 1});
     
    
     res.json(sellSingleDetails);
@@ -57,7 +57,7 @@ const getSingleSellById = asyncHandler(async (req, res) => {
   try {
     const {id} = req.params
    
-    const sellSingleDetails = await Sell.findById(id)
+    const sellSingleDetails = await Sell.findById(id).sort({_id : - 1});
     
    
     res.json(sellSingleDetails);
