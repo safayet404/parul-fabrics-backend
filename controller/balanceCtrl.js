@@ -13,7 +13,7 @@ const createBalance = asyncHandler(async(req,res)=>{
 
 const getAllBalance = asyncHandler(async(req,res)=>{
     try{
-        const allBalance = await Balance.find()
+        const allBalance = await Balance.find().sort({_id : - 1});
         res.json(allBalance)
     }catch(error)
     {
@@ -25,7 +25,7 @@ const getAllBalance = asyncHandler(async(req,res)=>{
 const getSingleBalance = asyncHandler(async(req,res)=>{
     const {id} = req.params
     try{
-        const singleBalance = await Balance.findById(id)
+        const singleBalance = await Balance.findById(id).sort({_id : - 1});
         res.json(singleBalance)
 
     }catch(error)
