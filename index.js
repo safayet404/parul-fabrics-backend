@@ -22,7 +22,7 @@ const { notFound, errorHandler } = require('./middlewares/errorHandler');
 const cookieParser = require("cookie-parser")
 const morgan = require("morgan")
 const cors = require('cors')
-//f2ezqNAzbvIqbic7
+
 connectDB()
 app.use(cors())
 app.use(morgan("dev"))
